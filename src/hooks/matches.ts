@@ -7,5 +7,4 @@ export const useMatches = () => {
     queryKey: ['matches'],
     queryFn: getMatches,
   })
-
 }
