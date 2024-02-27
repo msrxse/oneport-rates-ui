@@ -35,7 +35,8 @@ pnpm test:watch <path-to-file>
 ## TODOS
 
 - [ ] Add commitlint (Helps team adhere to a commit convention)
-- [ ] ...
+- [x] Add 2 col layout with list and article read
+- [ ] Add ContextModule with data and possibility of persistent article edition
 
 ## Useful links
 

@@ -1,0 +1,33 @@
+import { useMatches } from '@/hooks/matches'
+import { Match } from '@/types/matches'
+
+import styles from './List.module.css'
+
+interface ListProps {
+  setSelected: (event: Match) => void
+}
+
+export default function List({ setSelected }: ListProps) {
+  const { isPending, error, data } = useMatches()
+
+  if (isPending) return 'Loading...'
+
+  if (error) return 'An error has occurred: ' + error.message
+
+  function truncate(source: string, size: number) {
+    return source.length > size ? source.slice(0, size - 1) + '…' : source
+  }
+
+  return (
+    <div className={styles.list}>
+      {data.map((each) => (
+        <button key={each.id} className={styles.innerMatches} onClick={() => setSelected(each)}>
+          <h1>{each.name}</h1>
+          <p>{truncate(each.description, 50)}</p>
+          <strong>👀 {each.subscribers_count}</strong> <strong>✨ {each.stargazers_count}</strong>{' '}
+          <strong>🍴 {each.forks_count}</strong>
+        </button>
+      ))}
+    </div>
+  )
+}

@@ -1,0 +1,9 @@
+.article {
+  height: 50vh;
+  overflow-y: scroll;
+  margin-left: 1em;
+}
+
+.article>h1 {
+  color: brown;
+}

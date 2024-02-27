@@ -1,8 +1,15 @@
 body {
   height: 100vh;
-  display: grid;
-  place-content: center;
+  width: 100vw;
+  background-color: white;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 1rem;
   overflow: hidden;
-  background-color: #b4a7d6;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: inherit;
 }

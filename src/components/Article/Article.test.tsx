@@ -3,7 +3,7 @@ import { HttpResponse, http } from 'msw'
 import { server } from '@/mocks/node'
 import { renderWithQueryClient } from '@/utils/test-utils'
 
-import Matches from './Matches'
+import Matches from './Article'
 
 describe('Matches', () => {
   it('should render matches', async () => {
