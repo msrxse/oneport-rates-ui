@@ -45,6 +45,7 @@ pnpm test:watch <path-to-file>
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 - [How to setup MSW in a React project using Vite](https://www.raisiqueira.io/drops/vite-msw)
 - [Vitest](https://vitest.dev/guide/#overview)
+- [] (...)
 
 ## Expanding the ESLint configuration
 
