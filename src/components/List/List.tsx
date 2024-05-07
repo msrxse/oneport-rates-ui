@@ -1,14 +1,14 @@
-import { useMatches } from '@/hooks/matches'
-import { Match } from '@/types/matches'
+import { useArticles } from '@/hooks/articles'
+import { Article } from '@/types/article'
 
 import styles from './List.module.css'
 
 interface ListProps {
-  setSelected: (event: Match) => void
+  setSelected: (event: Article) => void
 }
 
 export default function List({ setSelected }: ListProps) {
-  const { isPending, error, data } = useMatches()
+  const { isPending, error, data } = useArticles()
 
   if (isPending) return 'Loading...'
 
@@ -21,7 +21,7 @@ export default function List({ setSelected }: ListProps) {
   return (
     <div className={styles.list}>
       {data.map((each) => (
-        <button key={each.id} className={styles.innerMatches} onClick={() => setSelected(each)}>
+        <button key={each.id} className={styles.innerArticles} onClick={() => setSelected(each)}>
           <h1>{each.name}</h1>
           <p>{truncate(each.description, 50)}</p>
           <strong>👀 {each.subscribers_count}</strong> <strong>✨ {each.stargazers_count}</strong>{' '}

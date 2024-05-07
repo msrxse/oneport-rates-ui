@@ -2,11 +2,11 @@ import { renderHook, waitFor } from '@testing-library/react'
 
 import { createQueryHookWrapper } from '@/utils/test-utils'
 
-import { useMatches } from './matches'
+import { useArticles } from './articles'
 
-describe('useMatches', () => {
-  it('should return matches', async () => {
-    const { result } = renderHook(() => useMatches(), {
+describe('getArticles', () => {
+  it('should return articles', async () => {
+    const { result } = renderHook(() => useArticles(), {
       wrapper: createQueryHookWrapper(),
     })
 

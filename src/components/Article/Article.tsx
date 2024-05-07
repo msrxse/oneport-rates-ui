@@ -1,14 +1,14 @@
-import { useMatches } from '@/hooks/matches'
-import { Match } from '@/types/matches'
+import { useArticles } from '@/hooks/articles'
+import { Article as ArticleProp } from '@/types/article'
 
 import styles from './Article.module.css'
 
 interface ArticleProps {
-  selected: Match | undefined
+  selected: ArticleProp | undefined
 }
 
 export default function Article({ selected }: ArticleProps) {
-  const { isPending, error, data } = useMatches()
+  const { isPending, error, data } = useArticles()
 
   if (isPending) return 'Loading...'
 

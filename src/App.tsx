@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import Matches from '@/scenes/Matches/Matches'
+import Articles from '@/scenes/Articles/Articles'
 
 import styles from './App.module.css'
 
@@ -10,7 +10,7 @@ export const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <main data-testid="app-id" className={styles.main}>
-        <Matches />
+        <Articles />
       </main>
     </QueryClientProvider>
   )

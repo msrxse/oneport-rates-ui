@@ -36,7 +36,7 @@ const todoItems = [
 ]
 
 export const handlers = [
-  http.get('/matches', () => {
+  http.get('/articles', () => {
     return HttpResponse.json(todoItems)
   }),
 
