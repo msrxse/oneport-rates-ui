@@ -1,7 +1,6 @@
 .article {
-  height: 50vh;
+  height: 100%;
   overflow-y: scroll;
-  margin-left: 1em;
 }
 
 .article>h1 {
