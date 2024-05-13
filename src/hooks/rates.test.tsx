@@ -2,11 +2,11 @@ import { renderHook, waitFor } from '@testing-library/react'
 
 import { createQueryHookWrapper } from '@/utils/test-utils'
 
-import { useArticles } from './articles'
+import { useRates } from './rates'
 
-describe('getArticles', () => {
-  it('should return articles', async () => {
-    const { result } = renderHook(() => useArticles(), {
+describe('getRates', () => {
+  it('should return rates', async () => {
+    const { result } = renderHook(() => useRates(), {
       wrapper: createQueryHookWrapper(),
     })
 

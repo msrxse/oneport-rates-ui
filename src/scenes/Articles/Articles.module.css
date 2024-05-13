@@ -1,7 +1,0 @@
-.articles {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  gap: 10px;
-  grid: auto-flow / 35% 1fr;
-}

@@ -1,43 +1,30 @@
 import { HttpResponse, http } from 'msw'
 
-const todoItems = [
-  {
-    id: '1',
-    name: 'Query 1',
-    description:
-      '🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.',
-    subscribers_count: 187281,
-    forks_count: 78,
+const rates = {
+  status: 'success',
+  data: {
+    rates: {
+      MAERSK: 16,
+      MSC: 36,
+      ONE: 71,
+      ZIM: 8,
+      PIL: 16,
+      ESL: 23,
+      COSCO: 9,
+      OOCL: 1,
+      'CMA CGM': 10,
+      TSL: 1,
+      'HAPAG LLOYD': 5,
+    },
+    total_rates: 196,
   },
-  {
-    id: '2',
-    name: 'Query 2',
-    description:
-      '🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.',
-    subscribers_count: 8971,
-    forks_count: 98,
-  },
-  {
-    id: '3',
-    name: 'Query 3',
-    description:
-      '🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.',
-    subscribers_count: 7431,
-    forks_count: 96,
-  },
-  {
-    id: '4',
-    name: 'Query 4',
-    description:
-      '🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.',
-    subscribers_count: 656769,
-    forks_count: 4,
-  },
-]
+  message: 'special rates successfully fetched',
+  code: 200,
+}
 
 export const handlers = [
-  http.get('/articles', () => {
-    return HttpResponse.json(todoItems)
+  http.get('/rates', () => {
+    return HttpResponse.json(rates)
   }),
 
   // ...other request handlers.
