@@ -9,7 +9,8 @@ enum ContainerType {
 
   REFEER = 'REEFER',
 }
-export interface Rate {
+
+interface Rate {
   freightify_request_id: string
   freightify_offer_id: string
   carrier_name: string
@@ -53,4 +54,14 @@ export interface Rate {
   special_rate_id: string
 }
 
-export { ContainerSize, ContainerType }
+interface GetSpecialRates {
+  status: string
+  data: {
+    rates: Record<string, number>
+    total_rates: number
+  }
+  message: string
+  code: number
+}
+
+export { type Rate, type GetSpecialRates, ContainerSize, ContainerType }

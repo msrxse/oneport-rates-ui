@@ -1,6 +1,6 @@
 import { HttpResponse, http } from 'msw'
 
-const rates = {
+const getSpecialRates = {
   status: 'success',
   data: {
     rates: {
@@ -23,8 +23,8 @@ const rates = {
 }
 
 export const handlers = [
-  http.get('/rates', () => {
-    return HttpResponse.json(rates)
+  http.get('/get_special_rates', () => {
+    return HttpResponse.json(getSpecialRates)
   }),
 
   // ...other request handlers.
