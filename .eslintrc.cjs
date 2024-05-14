@@ -1,6 +1,9 @@
+/* eslint-env node */
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:import/typescript',
@@ -12,8 +15,12 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic',
     'plugin:prettier/recommended',
     'prettier',
-
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -34,12 +41,7 @@ module.exports = {
     'react-refresh',
     'prettier',
   ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-    rules: {
+  rules: {
     'no-var': 'error',
     'no-alert': 'error',
     'no-console': 'error',
@@ -76,6 +78,5 @@ module.exports = {
     ],
 
     'react-refresh/only-export-components': ['error', { allowConstantExport: true }],
-    'react/react-in-jsx-scope': 'off',
   },
-};
+}

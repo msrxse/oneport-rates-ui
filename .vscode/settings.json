@@ -4,7 +4,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   // auto format code
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
