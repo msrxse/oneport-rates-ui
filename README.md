@@ -9,6 +9,13 @@ This is a clone of the [Oneport](https://www.oneport365.com/) site at the rates'
 
 - We use `react-query` to manage API state and `Zustand` to manage UI state
 
+### Data flow
+
+1. We are mocking data in development with MSW library. The user will start with a selection on `containerSize` and `containerType`, any selection there will trigger a fetch of the available `specialFilters`. Initially there are 2 default ones already populated (`20FT` and `dry` respectively).
+2. Then, an initial `specialFilters` will be selected by default (the first one - `Maersk`) and the `rates` will be fetched from this `specialFilters` selection, from there on other filter selection will trigger a `rates` fetch to poopulate the cards section.
+
+- Note that we have given a delay of 500msec to all fetches to really see loaders averywhere.
+
 ## To start development server:
 
 ```
@@ -37,7 +44,10 @@ pnpm test:watch <path-to-file>
 
 ## TODOS
 
-- [ ] Add rates scene
-- [ ] Wire data from react-query to rates scene
-- [ ] Use Zustand to keep hold of filter and params UI data
+- [x] Add rates scene
+- [x] Wire data from react-query to rates scene
+- [x] Use Zustand to keep hold of filter and params UI data
+- [ ] Add tests
+- [ ] Add documentation
+- [ ] Add pagination
 - [ ] ...

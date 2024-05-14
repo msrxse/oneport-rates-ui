@@ -1,5 +1,3 @@
-import { act } from 'react-dom/test-utils'
-
 import { renderHook, waitFor } from '@testing-library/react'
 
 import { createQueryHookWrapper } from '@/utils/test-utils'
@@ -7,8 +5,13 @@ import { createQueryHookWrapper } from '@/utils/test-utils'
 import { useGetSpecialFilters, useGetSpecialRates } from './rates'
 
 describe('Rates', () => {
+  const props = {
+    containerSize: '20FT',
+    containerType: 'dry',
+    specialFilter: 'Maersk',
+  }
   it('useGetSpecialRates should return correct state', async () => {
-    const { result } = renderHook(() => useGetSpecialRates(), {
+    const { result } = renderHook(() => useGetSpecialRates({ ...props }), {
       wrapper: createQueryHookWrapper(),
     })
 
@@ -21,10 +24,10 @@ describe('Rates', () => {
    * Need to find out how to populate the query cache beforehand!
    */
   it('useGetSpecialFilters should return correct state', async () => {
-    const { result } = renderHook(() => useGetSpecialRates(), {
+    const { result } = renderHook(() => useGetSpecialRates({ ...props }), {
       wrapper: createQueryHookWrapper(),
     })
-    const { result: result2 } = renderHook(() => useGetSpecialFilters(), {
+    const { result: result2 } = renderHook(() => useGetSpecialFilters({ ...props }), {
       wrapper: createQueryHookWrapper(),
     })
 

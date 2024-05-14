@@ -1,5 +1,6 @@
-import { Rate } from "types";
-import RateCard from "./rate-card";
+import { Rate } from '@/types/rates'
+
+import RateCard from './rate-card'
 
 const RatesList = ({ rates }: { rates: Rate[] }) => {
   return (
@@ -18,7 +19,7 @@ const RatesList = ({ rates }: { rates: Rate[] }) => {
         />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default RatesList;
+export default RatesList

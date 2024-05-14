@@ -1,14 +1,10 @@
-import { useEffect, useState } from 'react'
-
-import axios from 'axios'
+import { useEffect } from 'react'
 
 import RatesHeader from '@/components/rates/rates-header'
 import Loading from '@/components/ui/loading'
-import { useGetSpecialFilters, useGetSpecialRates } from '@/hooks/rates'
-import { getRateFilters } from '@/lib/utils'
+import { useGetRateBySpecialFilter, useGetSpecialFilters, useGetSpecialRates } from '@/hooks/rates'
 import { useRatesFilterStore } from '@/store/rates-filters-store'
 import { useRatesParamsStore } from '@/store/rates-params-store'
-import { useRatesStore } from '@/store/rates-store'
 
 import RateContainer from './rate-container'
 import RatesList from './rates-list'
@@ -19,25 +15,31 @@ import RatesList from './rates-list'
  */
 
 const RatesComponent = () => {
-  // State variables
-  // const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [noOfRates, setNoOfRates] = useState(9)
-
   // Global State
-  const { isLoading, error, data } = useGetSpecialRates()
-  // Custom hook variables
-  // const containerSize = useRatesParamsStore((state) => state.containerSize)
-  // const containerType = useRatesParamsStore((state) => state.containerType)
-  const CurrentRateFilter = useRatesFilterStore((state) => state.currentRateFilter)
-  const rateStore = useRatesStore((state) => state.rates)
-  // const rateFilters = useRatesFilterStore((state) => state.rateFilters)
-  const getSpecialFilters = useGetSpecialFilters()
-
+  const containerSize = useRatesParamsStore((state) => state.containerSize)
+  const containerType = useRatesParamsStore((state) => state.containerType)
+  const { data } = useGetSpecialRates({
+    containerSize: containerSize,
+    containerType: containerType,
+  })
   // Custom hook functions
   const setCurrentRateFilter = useRatesFilterStore((state) => state.setCurrentRateFilter)
   const currentRateFilter = useRatesFilterStore((state) => state.currentRateFilter)
-  // const setRatesStore = useRatesStore((state) => state.setRates)
-  // const setRateFilters = useRatesFilterStore((state) => state.setRateFilters)
+  const {
+    isLoading,
+    isError,
+    error,
+    data: ratesBySpecialFilter,
+  } = useGetRateBySpecialFilter({
+    containerSize: containerSize,
+    containerType: containerType,
+    specialFilter: currentRateFilter,
+  })
+
+  const getSpecialFilters = useGetSpecialFilters({
+    containerSize: containerSize,
+    containerType: containerType,
+  })
 
   /**
    * We want to mark the first filter as active just once
@@ -50,12 +52,9 @@ const RatesComponent = () => {
     }
   }, [currentRateFilter, data?.data.rates, data?.status, getSpecialFilters, setCurrentRateFilter])
 
-  // Filter and paginate rates
-  const filteredRates = rateStore.filter((rate) => {
-    return rate.carrier_name === CurrentRateFilter
-  })
-
-  const paginatedRates = filteredRates.slice(0, noOfRates)
+  if (isError) {
+    return <span>Error: {error?.message}</span>
+  }
 
   return (
     <>
@@ -70,15 +69,15 @@ const RatesComponent = () => {
       ) : (
         <div>
           <RateContainer>
-            {paginatedRates.length === 0 ? (
+            {ratesBySpecialFilter?.data.total_rates === 0 ? (
               <p>No Rates to Display</p>
             ) : (
-              <RatesList rates={paginatedRates} />
+              <RatesList rates={ratesBySpecialFilter ? ratesBySpecialFilter.data.rates : []} />
             )}
           </RateContainer>
 
           {/* Render show more/less button */}
-          {paginatedRates.length >= 9 && (
+          {/* {paginatedRates.length >= 9 && (
             <div className="mt-10">
               <p className="text-center mb-4 text-sm text-custom-black">
                 Viewing {paginatedRates.length} of {filteredRates.length} special rates
@@ -103,7 +102,7 @@ const RatesComponent = () => {
                 </button>
               )}
             </div>
-          )}
+          )} */}
         </div>
       )}
     </>

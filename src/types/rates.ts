@@ -6,7 +6,6 @@ enum ContainerSize {
 
 enum ContainerType {
   DRY = 'dry',
-
   REFEER = 'REEFER',
 }
 
@@ -64,4 +63,14 @@ interface GetSpecialRates {
   code: number
 }
 
-export { type Rate, type GetSpecialRates, ContainerSize, ContainerType }
+interface GetRates {
+  status: string
+  data: {
+    rates: Rate[]
+    total_rates: number
+  }
+  message: string
+  code: number
+}
+
+export { type GetRates, type Rate, type GetSpecialRates, ContainerSize, ContainerType }

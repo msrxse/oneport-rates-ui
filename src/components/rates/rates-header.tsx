@@ -1,5 +1,5 @@
-import RatesFilter from "./rates-filter";
-import { RateSelect } from "./rates-select";
+import RatesFilter from './rates-filter'
+import { RateSelect } from './rates-select'
 
 const RatesHeader = ({ rateFilters }: { rateFilters: string[] }) => {
   return (
@@ -10,7 +10,7 @@ const RatesHeader = ({ rateFilters }: { rateFilters: string[] }) => {
       </div>
       <RatesFilter filters={rateFilters} />
     </div>
-  );
-};
+  )
+}
 
-export default RatesHeader;
+export default RatesHeader

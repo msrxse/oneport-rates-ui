@@ -1,12 +1,12 @@
 interface RateCardProps {
-  carrier_name: string;
-  origin_port_code: string;
-  destination_port_code: string;
-  sailing_date: string;
-  transit_time?: string;
-  detention_days: number;
-  demurrage_days: number;
-  amountUsd: number;
+  carrier_name: string
+  origin_port_code: string
+  destination_port_code: string
+  sailing_date: string
+  transit_time?: string
+  detention_days: number
+  demurrage_days: number
+  amountUsd: number
 }
 
 const RateCard = ({
@@ -33,32 +33,26 @@ const RateCard = ({
       </div>
       <div className="mt-3 mb-6 flex items-center justify-between">
         <p className="text-xl font-normal text-custom-deep-green">
-          {!amountUsd ? "N/A" : "$" + amountUsd}
+          {!amountUsd ? 'N/A' : '$' + amountUsd}
         </p>
         <p className="flex justify-end mb-2"></p>
       </div>
       <div className="text-sm pt-6 grid grid-cols-3 border-t border-custom-border-grey">
         <div>
           <p className="text-custom-grey font-light mb-1.5">Sailing Date</p>
-          <p className="text-custom-blue">
-            {sailing_date ? sailing_date : "N/A"}
-          </p>
+          <p className="text-custom-blue">{sailing_date ? sailing_date : 'N/A'}</p>
         </div>
         <div>
           <p className="text-custom-grey font-light mb-1.5">Transit Time</p>
-          <p className="text-custom-blue">
-            {transit_time ? `${transit_time} days` : "N/A"}
-          </p>
+          <p className="text-custom-blue">{transit_time ? `${transit_time} days` : 'N/A'}</p>
         </div>
         <div>
           <p className="text-custom-grey font-light mb-1.5">Free Days</p>
-          <p className="text-custom-blue">
-            {detention_days + demurrage_days} days
-          </p>
+          <p className="text-custom-blue">{detention_days + demurrage_days} days</p>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default RateCard;
+export default RateCard
