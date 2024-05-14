@@ -9,6 +9,8 @@ This is a clone of the [Oneport](https://www.oneport365.com/) site at the rates'
 
 - We use `react-query` to manage API state and `Zustand` to manage UI state
 
+![GitHub Image](Oneport365-screenshot.png)
+
 ### Data flow
 
 1. We are mocking data in development with MSW library. The user will start with a selection on `containerSize` and `containerType`, any selection there will trigger a fetch of the available `specialFilters`. Initially there are 2 default ones already populated (`20FT` and `dry` respectively).
