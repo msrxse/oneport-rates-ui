@@ -2,8 +2,8 @@
 
 This is a clone of the [Oneport](https://www.oneport365.com/) site at the rates' scene. Showcases a list of cards:
 
-- Filterable with 2 params (container size and container type) (server side)
-- Filterable by rate filters (locally)
+- Special Filters: Filterable with 2 params (container size and container type) (server side)
+- Rates: Filterable by rate filters (server side)
 
 ### Note
 
@@ -49,7 +49,8 @@ pnpm test:watch <path-to-file>
 - [x] Add rates scene
 - [x] Wire data from react-query to rates scene
 - [x] Use Zustand to keep hold of filter and params UI data
-- [ ] Add tests
+- [ ] Tests pass
+- [ ] Add github actions CD/CI
 - [ ] Add documentation
 - [ ] Add pagination
 - [ ] ...
