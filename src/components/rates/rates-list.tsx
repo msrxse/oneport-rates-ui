@@ -4,10 +4,11 @@ import RateCard from './rate-card'
 
 const RatesList = ({ rates }: { rates: Rate[] }) => {
   return (
-    <>
+    <div data-testid="rates-list-id">
       {rates.map((rate, i) => (
         <RateCard
           key={i}
+          dataTestid={`rates-list-rate-card-${i + 1}`}
           amountUsd={rate.total_amount_usd}
           carrier_name={rate.carrier_name}
           demurrage_days={rate.demurrage_days}
@@ -18,7 +19,7 @@ const RatesList = ({ rates }: { rates: Rate[] }) => {
           transit_time={rate.transit_time}
         />
       ))}
-    </>
+    </div>
   )
 }
 

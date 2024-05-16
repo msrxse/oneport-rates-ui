@@ -68,11 +68,11 @@ const generateRates = () => {
 export const handlers = [
   http.get('/get_special_rates', async () => {
     // Await a random realistic server response time.
-    await delay(500)
+    await delay()
     return HttpResponse.json(getSpecialRates)
   }),
   http.get('/get_rates', async () => {
-    // Await a random realistic server response time.
+    // Await a 500msec server response time.
     await delay(500)
 
     return HttpResponse.json(generateRates())

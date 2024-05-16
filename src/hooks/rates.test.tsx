@@ -2,7 +2,7 @@ import { renderHook, waitFor } from '@testing-library/react'
 
 import { createQueryHookWrapper } from '@/utils/test-utils'
 
-import { useGetSpecialFilters, useGetSpecialRates } from './rates'
+import { useGetRateBySpecialFilter, useGetSpecialFilters, useGetSpecialRates } from './rates'
 
 describe('Rates', () => {
   const props = {
@@ -36,5 +36,15 @@ describe('Rates', () => {
     const data = result2.current()
 
     expect(data).toStrictEqual([])
+  })
+
+  it('useGetRateBySpecialFilter should return correct state', async () => {
+    const { result } = renderHook(() => useGetRateBySpecialFilter({ ...props }), {
+      wrapper: createQueryHookWrapper(),
+    })
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true))
+
+    expect(result.current.data).toBeDefined()
   })
 })

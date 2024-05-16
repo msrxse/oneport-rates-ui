@@ -16,10 +16,10 @@ interface Rate {
   carrier_image: string
   carrier_scac: string
   offer_type: string
-  route_schedule: []
-  transit_time?: string
+  route_schedule: unknown
+  transit_time: string | null
   service_type: string
-  sailing_date: string
+  sailing_date: string | null
   demurrage_days: number
   detention_days: number
   valid_to: string
@@ -27,27 +27,6 @@ interface Rate {
   commodity: string
   total_amount_usd: number
   total_amount_ngn: number
-  charge_breakdown: {
-    ocean_charges: [
-      [
-        {
-          amount: number
-          amountUsd: number
-          description: string
-          qty: 1
-          rate: number
-          rateCurrency: string
-          rateUsd: number
-          rateBasis: string
-          rateTypeCode: string
-          paymentMethod: string
-          containerType: string
-          amountNgn: number
-          rateNgn: number
-        },
-      ],
-    ]
-  }
   origin_port_code: string
   destination_port_code: string
   special_rate_id: string

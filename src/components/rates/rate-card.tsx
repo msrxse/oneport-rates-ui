@@ -1,15 +1,17 @@
 interface RateCardProps {
+  dataTestid: string
   carrier_name: string
   origin_port_code: string
   destination_port_code: string
-  sailing_date: string
-  transit_time?: string
+  sailing_date: string | null
+  transit_time?: string | null
   detention_days: number
   demurrage_days: number
   amountUsd: number
 }
 
 const RateCard = ({
+  dataTestid,
   carrier_name,
   origin_port_code,
   destination_port_code,
@@ -20,7 +22,10 @@ const RateCard = ({
   amountUsd,
 }: RateCardProps) => {
   return (
-    <div className="p-5 cursor-pointer border-[2px] rounded-[10px] border-custom-border-grey hover:border-custom-green">
+    <div
+      data-testid={dataTestid}
+      className="p-5 cursor-pointer border-[2px] rounded-[10px] border-custom-border-grey hover:border-custom-green"
+    >
       <div className="flex items-center justify-between">
         <p className="text-sm text-black font-medium">{carrier_name}</p>
         <div className="black-text-3 flex text-sm font-normal items-center gap-x-2">
