@@ -15,7 +15,8 @@
     "antfu.browse-lite",
     "stylelint.vscode-stylelint",
     "ms-azuretools.vscode-docker",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "GitHub.vscode-github-actions"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

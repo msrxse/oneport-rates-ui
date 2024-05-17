@@ -42,8 +42,8 @@ const getRatesBySpecialFilterQueryKey = ({
   containerType,
   specialFilter,
 }: rateBySpecialFilterProps) => [
-    `get_rates_by_special_filter--${containerSize}-${containerType}-${specialFilter}`,
-  ]
+  `get_rates_by_special_filter--${containerSize}-${containerType}-${specialFilter}`,
+]
 
 const useGetRateBySpecialFilter = ({
   containerSize,
