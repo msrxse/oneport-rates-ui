@@ -3,6 +3,7 @@ import { renderWithQueryClient } from '@/utils/test-utils'
 
 describe('RateCard', () => {
   const props = {
+    dataTestid: 'id',
     carrier_name: 'Maersk',
     origin_port_code: 'CNSZC',
     destination_port_code: 'GHTEM',
