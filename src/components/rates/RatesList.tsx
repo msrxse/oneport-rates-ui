@@ -1,6 +1,6 @@
 import { Rate } from '@/types/rates'
 
-import RateCard from './rate-card'
+import RateCard from './RateCard'
 
 const RatesList = ({ rates }: { rates: Rate[] }) => {
   return (

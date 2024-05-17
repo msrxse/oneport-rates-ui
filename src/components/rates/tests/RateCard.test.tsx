@@ -1,4 +1,4 @@
-import RateCard from '@/components/rates/rate-card'
+import RateCard from '@/components/rates/RateCard'
 import { renderWithQueryClient } from '@/utils/test-utils'
 
 describe('RateCard', () => {

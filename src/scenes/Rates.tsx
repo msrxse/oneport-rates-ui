@@ -1,4 +1,4 @@
-import RatesComponent from '@/components/rates/rates-component'
+import RatesComponent from '@/components/rates/RatesComponent'
 
 /**
  * Rates displays a list of rates based on certain parameters.

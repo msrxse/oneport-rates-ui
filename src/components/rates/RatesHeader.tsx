@@ -1,5 +1,5 @@
-import RatesFilter from './rates-filter'
-import { RateSelect } from './rates-select'
+import RatesFilter from './RatesFilter'
+import { RateSelect } from './RatesSelect'
 
 const RatesHeader = ({ rateFilters }: { rateFilters: string[] }) => {
   return (

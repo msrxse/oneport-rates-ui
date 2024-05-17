@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 
-import RatesFilter from '@/components/rates/rates-filter'
+import RatesFilter from '@/components/rates/RatesFilter'
 import { renderWithQueryClient } from '@/utils/test-utils'
 
 describe('RatesFilter', () => {

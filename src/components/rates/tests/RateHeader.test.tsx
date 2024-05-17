@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 
-import RatesHeader from '@/components/rates/rates-header'
+import RatesHeader from '@/components/rates/RatesHeader'
 import { renderWithQueryClient } from '@/utils/test-utils'
 
 describe('RatesHeader', () => {

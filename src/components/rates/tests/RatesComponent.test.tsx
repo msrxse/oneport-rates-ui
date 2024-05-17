@@ -1,7 +1,7 @@
 import { screen, waitFor } from '@testing-library/react'
 import { HttpResponse, http } from 'msw'
 
-import RatesComponent from '@/components/rates/rates-component'
+import RatesComponent from '@/components/rates/RatesComponent'
 import { server } from '@/mocks/node'
 import { renderWithQueryClient } from '@/utils/test-utils'
 

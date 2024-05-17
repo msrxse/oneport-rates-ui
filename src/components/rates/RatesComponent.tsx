@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 
-import RatesHeader from '@/components/rates/rates-header'
+import RatesHeader from '@/components/rates/RatesHeader'
 import Loading from '@/components/ui/loading'
 import { useGetRateBySpecialFilter, useGetSpecialFilters, useGetSpecialRates } from '@/hooks/rates'
 import { useRatesFilterStore } from '@/store/rates-filters-store'
 import { useRatesParamsStore } from '@/store/rates-params-store'
 
-import RateContainer from './rate-container'
-import RatesList from './rates-list'
+import RateContainer from './RateContainer'
+import RatesList from './RatesList'
 
 /**
  * RatesComponent displays a list of rates based on certain parameters.

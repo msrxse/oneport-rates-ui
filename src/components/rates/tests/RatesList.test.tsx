@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 
-import RatesList from '@/components/rates/rates-list'
+import RatesList from '@/components/rates/RatesList'
 import { renderWithQueryClient } from '@/utils/test-utils'
 
 const defaultCardProp = {
