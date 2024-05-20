@@ -75,34 +75,6 @@ const RatesComponent = () => {
               <RatesList rates={ratesBySpecialFilter ? ratesBySpecialFilter.data.rates : []} />
             )}
           </RateContainer>
-
-          {/* Render show more/less button */}
-          {/* {paginatedRates.length >= 9 && (
-            <div className="mt-10">
-              <p className="text-center mb-4 text-sm text-custom-black">
-                Viewing {paginatedRates.length} of {filteredRates.length} special rates
-              </p>
-              {paginatedRates.length <= 9 ? (
-                <button
-                  className="border-solid flex px-12 mx-auto border-[1px] border-[#374151] rounded py-3"
-                  onClick={() => {
-                    setNoOfRates(rateStore.length)
-                  }}
-                >
-                  Show All
-                </button>
-              ) : (
-                <button
-                  className="border-solid flex px-12 mx-auto border-[1px] border-[#374151] rounded py-3"
-                  onClick={() => {
-                    setNoOfRates(9)
-                  }}
-                >
-                  Show Less
-                </button>
-              )}
-            </div>
-          )} */}
         </div>
       )}
     </>

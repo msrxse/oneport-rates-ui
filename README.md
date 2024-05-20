@@ -50,8 +50,7 @@ pnpm test:watch <path-to-file>
 - [x] Wire data from react-query to rates scene
 - [x] Use Zustand to keep hold of filter and params UI data
 - [x] Tests pass
-- [ ] Add pagination
-- [ ] Add github actions CD/CI
-- [ ] Add documentation
+- [x] Add documentation
+- [x] Add github actions CD/CI
 - [ ] Dockerize app
 - [ ] ...

@@ -6,6 +6,7 @@ import { createCache } from '@/utils/test-utils'
 
 const queryCache = createCache()
 
+
 beforeAll(() => {
   // Enable API mocking before all the tests.
   server.listen()
