@@ -9,6 +9,22 @@ enum ContainerType {
   REFEER = 'REEFER',
 }
 
+interface OceanCharges {
+  amount: number
+  amountUsd: number
+  description: string
+  qty: number
+  rate: number
+  rateCurrency: string
+  rateUsd: number
+  rateBasis: string
+  rateTypeCode: string
+  paymentMethod: string
+  containerType: string
+  amountNgn: number
+  rateNgn: number
+}
+
 interface Rate {
   freightify_request_id: string
   freightify_offer_id: string
@@ -28,25 +44,7 @@ interface Rate {
   total_amount_usd: number
   total_amount_ngn: number
   charge_breakdown: {
-    ocean_charges: [
-      [
-        {
-          amount: number
-          amountUsd: number
-          description: string
-          qty: 1
-          rate: number
-          rateCurrency: string
-          rateUsd: number
-          rateBasis: string
-          rateTypeCode: string
-          paymentMethod: string
-          containerType: string
-          amountNgn: number
-          rateNgn: number
-        },
-      ],
-    ]
+    ocean_charges: OceanCharges[]
   }
   origin_port_code: string
   destination_port_code: string
