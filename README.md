@@ -52,5 +52,6 @@ pnpm test:watch <path-to-file>
 - [x] Tests pass
 - [x] Add documentation
 - [x] Add github actions CD/CI
+- [ ] Add backend service with Node or Go
 - [ ] Dockerize app
 - [ ] ...
