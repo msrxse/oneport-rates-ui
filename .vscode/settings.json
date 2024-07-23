@@ -72,6 +72,7 @@
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.colorTheme": "Noctis Obscuro",
   "workbench.editor.labelFormat": "medium",
+  "terminal.integrated.tabs.enabled": false,
   // "workbench.editor.showTabs": "none",
   "workbench.iconTheme": "vscode-icons",
   "workbench.sideBar.location": "right",
